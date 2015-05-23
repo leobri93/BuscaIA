@@ -5,6 +5,8 @@
  */
 package buscaia;
 
+import java.util.Arrays;
+
 
 public class BuscaIA {
 
@@ -13,7 +15,8 @@ public class BuscaIA {
      */
     //Primeiro trabalho de IA: Desenvolver três métodos de busca entre dois pontos//
     public static void main(String[] args) {
-        // TODO code application logic here
+        BuscaLargura bl = new BuscaLargura();
+        System.out.println(bl.BuscaEmLargura("Itaipu", "Centro"));
     }
     
 }
