@@ -10,15 +10,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
-import javax.swing.tree.TreeNode;
 import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.SimpleGraph;
 
-/**
- *
- * @author Leonardo
- */
+
 public class BuscaLargura {
 
     UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
@@ -50,24 +46,7 @@ public class BuscaLargura {
         return null;
     }
     
-    public Set<DefaultEdge> retornaOrigem(String origem){
-        Object[] teste2 = stringGraph.edgeSet().toArray();
-        System.out.println(teste2[0].toString());
-        System.out.println(teste2[1].toString());
-        System.out.println(teste2[2].toString());
-        System.out.println(teste2[3].toString());
-        Set<DefaultEdge> teste = stringGraph.edgeSet();
-        Set<DefaultEdge> retorno = null;
-        for(DefaultEdge atual:teste){
-            if(stringGraph.getEdgeSource(atual).equals(origem)){
-                retorno.add(atual);
-            }
-        }
-        return retorno;
-    }
-    
-    
-
+    //Graph creation
     private static UndirectedGraph<String, DefaultEdge> createStringGraph() {
         UndirectedGraph<String, DefaultEdge> g
                 = new SimpleGraph<String, DefaultEdge>(DefaultEdge.class);
