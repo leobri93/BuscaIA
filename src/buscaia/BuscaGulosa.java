@@ -17,41 +17,52 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 public class BuscaGulosa {
     
       //Graph definition
-      SimpleDirectedWeightedGraph<String, DefaultWeightedEdge> stringGraph = createStringGraph();
-      
-      public void BuscaGulosa(String start, String end){
+      SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> stringGraph = createStringGraph();
+      List<Vertex> vertices = new LinkedList<>();
+      public String BuscaGulosa(String start, String end){
           //get the neighbours of the starting node
-          Set<DefaultWeightedEdge> temp = stringGraph.edgesOf(start);
+          Vertex initialVertex = searchVertex(start);
+          if(initialVertex == null){
+              return "Não existe esse vertice";
+          }
+          Set<DefaultWeightedEdge> temp = stringGraph.edgesOf(initialVertex);
           //put the neighbours in a List
           List<DefaultWeightedEdge> vizinhos;
           vizinhos = new LinkedList<>();
           vizinhos.addAll(temp);
-          
+          return "existe";
       }
 //Graph creation
-      private static SimpleDirectedWeightedGraph<String, DefaultWeightedEdge> createStringGraph() {
-      SimpleDirectedWeightedGraph<String, DefaultWeightedEdge>  g = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class); 
-            
-        String Itaipu = "Itaipu";
-        String Sao_Francisco = "Sao Francisco";
-        String Icarai = "Icarai";
-        String Centro = "Centro";
-        String Charitas = "Charitas";
-
+      private static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createStringGraph() {
+      SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge>  g = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class); 
+        Vertex Itaipu = new Vertex("Itaipu",4);
+        Vertex SaoFrancisco = new Vertex("São Francisco",10);
+        Vertex Icarai = new Vertex("Icaraí",12);
+        Vertex Centro = new Vertex("Centro",15);
+        Vertex Charitas = new Vertex("Charitas",23);
+       
         // add the vertices
         g.addVertex(Itaipu);
-        g.addVertex(Sao_Francisco);
+        g.addVertex(SaoFrancisco);
         g.addVertex(Icarai);
         g.addVertex(Centro);
         g.addVertex(Charitas);
 
         // add edges to create a circuit
-        g.setEdgeWeight(g.addEdge(Itaipu, Sao_Francisco), 5);
-        g.setEdgeWeight(g.addEdge(Sao_Francisco, Icarai), 12);
-        g.setEdgeWeight(g.addEdge(Sao_Francisco, Charitas), 15);
-        g.setEdgeWeight(g.addEdge(Charitas, Centro), 30);
+        g.setEdgeWeight(g.addEdge(Itaipu, SaoFrancisco), 5);
+        g.setEdgeWeight(g.addEdge(SaoFrancisco, Icarai), 12);
+        g.setEdgeWeight(g.addEdge(SaoFrancisco, Charitas), 11);
         g.setEdgeWeight(g.addEdge(Icarai, Centro), 10);
         
         return g;
+    }
+
+    private Vertex searchVertex(String name) {
+        for(Vertex atual: vertices){
+            if(atual.getName().equals(name)){
+                return atual;
+            }
+        }
+        return null;
     }
 }
