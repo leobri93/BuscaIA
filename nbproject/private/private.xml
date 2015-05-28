@@ -3,9 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Projects/UFF/BuscaIA/src/buscaia/Heuristica.java</file>
             <file>file:/C:/Projects/UFF/BuscaIA/src/buscaia/BuscaIA.java</file>
             <file>file:/C:/Projects/UFF/BuscaIA/src/buscaia/BuscaGulosa.java</file>
             <file>file:/C:/Projects/UFF/BuscaIA/src/buscaia/BuscaLargura.java</file>
+            <file>file:/C:/Projects/UFF/BuscaIA/src/buscaia/Vertex.java</file>
         </group>
     </open-files>
 </project-private>

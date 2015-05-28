@@ -16,6 +16,9 @@ public class Vertex {
         this.pai = pai;
     }
 
+    public Vertex() {
+    }
+
     public Vertex(String name, int peso) {
         this.name = name;
         this.peso = peso;
