@@ -16,7 +16,7 @@ public class BuscaIA {
     //Primeiro trabalho de IA: Desenvolver três métodos de busca entre dois pontos//
     public static void main(String[] args) {
         BuscaLargura bl = new BuscaLargura();
-        System.out.println(bl.BuscaEmLargura("Itaipu", "Centro"));
+        //System.out.println(bl.BuscaEmLargura("Itaipu", "Centro"));
     }
     
 }
