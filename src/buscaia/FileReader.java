@@ -35,7 +35,7 @@ public class FileReader {
                     openW = openW.replace("way id=\"", "");
                     //Pega o nome da Rua
                     String nomeDaRua = nomeRua(openW);
-
+                    Vertex atual = new Vertex();
                     //Enquanto nao encerrar a leitura da rua
                     while (!scan.findInLine(closeWay).equals("\\way")) {
                         //Procura por um ref
@@ -44,19 +44,15 @@ public class FileReader {
                         if (refString != null) {
                             //Trata a string para pegar o ID
                             refString = refString.replace("ref=\"", "");
-                            Vertex atual = new Vertex();
-                            //Adiciona o ID ao vertice
-                            atual.setId(Integer.parseInt(refString));
                             //Adiciona a latitude a longitude a um vertice
                             latLongReturn(refString, atual);
-                            //Adiciona o nome da rua ao vertice
-                            atual.setName(nomeDaRua);
-                            //Adiciona na colecao
-                            nos.add(atual);
                         }
                         scan.nextLine();
                     }
-
+                    //Adiciona o nome da rua ao vertice
+                    atual.setName(nomeDaRua);
+                    //Adiciona na colecao
+                    nos.add(atual);
                 }
                 scan.nextLine();
             }
@@ -96,9 +92,8 @@ public class FileReader {
                         latitude = latitude.replace("lat=\"", "");
                         longitude = longitude.replace("lon=\"", "");
                         
-                        //Seta a latitude e longitude 
-                        atual.setLatitude(Integer.parseInt(latitude));
-                        atual.setLongitude(Integer.parseInt(longitude));
+                        //Seta a latitude, longitude e ID
+                        atual.add(Integer.parseInt(refString), Integer.parseInt(latitude), Integer.parseInt(longitude));
                         break;
                     }
                 }
