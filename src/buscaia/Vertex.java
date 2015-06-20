@@ -14,6 +14,10 @@ public class Vertex {
     private Vertex pai;
     private LinkedList<Referencia> referencias;
 
+    public LinkedList<Referencia> getReferencias() {
+        return referencias;
+    }
+
     public Vertex() {
     }
 
