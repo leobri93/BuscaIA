@@ -17,69 +17,65 @@ import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 //import org.jgrapht.graph.SimpleGraph;
 
-
 public class BuscaLargura {
 
     //UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
-    
-    public String BuscaEmLargura (String startRoad, String endRoad) throws FileNotFoundException{
+    public List<String> BuscaEmLargura(String startRoad, String endRoad) throws FileNotFoundException {
         //cria um grafo com as informações provenientes do arquivo
         SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
-        
+
         //cria os vertices Inicio e Fim
-        Vertex start = new Vertex();
-        Vertex end = new Vertex();
-        
-        //set o nome das ruas nos respectivos vertices
-        start.setName(startRoad);
-        end.setName(endRoad);
-        
-        if(graph.containsVertex(start) && graph.containsVertex(end)){
+        Vertex start = searchByName(startRoad, graph);
+        Vertex end = searchByName(endRoad, graph);
+
+        if (start != null && end != null) {
+            // retorna as arestas dos vizinhos de start
             Set<DefaultWeightedEdge> tempRetorno = graph.edgesOf(start);
+            // Cria uma fila de vizinhos e adiciona os vizinhos
             Queue<DefaultWeightedEdge> vizinhos = new LinkedList<>();
             vizinhos.addAll(tempRetorno);
+            //cria uma lista de vistados e adiciona o nó inicial
             List<Vertex> visitados = new ArrayList<>();
             visitados.add(start);
             DefaultWeightedEdge temp = null;
-            while(!vizinhos.isEmpty()){
-                if(!visitados.contains(vizinhos.peek())){
+            //Enquanto tem vizinhos
+            while (!vizinhos.isEmpty()) {
+                //Se o vizinho nao foi visitado
+                if (!visitados.contains(graph.getEdgeTarget(vizinhos.peek()))) {
                     temp = vizinhos.poll();
+                    //Seta o pai do proximo vertice
+                    graph.getEdgeTarget(temp).setPai(graph.getEdgeSource(temp));
+                    //Adiciona o vizinho aos visitados
+                    visitados.add(graph.getEdgeTarget(temp));
                 }
-                visitados.add(graph.getEdgeSource(temp));
-                if(graph.getEdgeTarget(temp).equals(end)){
-                    //falta o caminho
-                    return "Show";
-                }else{
+                //Se chegou ao fim
+                if (graph.getEdgeTarget(temp).equals(end)) {
+                    //
+                    return path(graph.getEdgeTarget(temp));
+                } else {
+                    //Se não chegou ao fim, adiciona as arestas do target a lista de vizinhos
+
                     vizinhos.addAll(graph.edgesOf(graph.getEdgeTarget(temp)));
                 }
             }
         }
-//        if(stringGraph.containsVertex(start) && stringGraph.containsVertex(end)){
-//            
-//            Set<DefaultEdge> tempRetorno = stringGraph.edgesOf(start);
-//            Queue<DefaultEdge> vizinhos = new LinkedList<>();
-//            vizinhos.addAll(tempRetorno);
-//            List<String> visitados = new ArrayList<>();
-//            visitados.add(start);
-//            DefaultEdge temp = null;
-//            while (!vizinhos.isEmpty()){
-//                if(!visitados.contains(vizinhos.peek())){
-//                    temp = vizinhos.poll();
-//                    System.out.println(temp);
-//                }
-//                visitados.add(stringGraph.getEdgeSource(temp));
-//                if(stringGraph.getEdgeTarget(temp).equals(end)){
-//                   //Caminho;
-//                    return "Show!";
-//                }
-//                else{
-//                    vizinhos.addAll(stringGraph.edgesOf(stringGraph.getEdgeTarget(temp)));
-//                }
-//            }
-//        }
         return null;
     }
-    
+
+    private List<String> path(Vertex end) {
+        
+        List<String> list = new LinkedList<>();
+        list.add(end.getName());
+        Vertex temp = end.getPai();
+        while(temp!=null){
+            list.add(temp.getName());
+            temp = temp.getPai();
+        }
+        
+        return list;
+    }
+
+    //Criar um metodo que 
 //    //Graph creation
 //    private static UndirectedGraph<String, DefaultEdge> createStringGraph() {
 //        UndirectedGraph<String, DefaultEdge> g
@@ -106,4 +102,13 @@ public class BuscaLargura {
 //
 //        return g;
 //    }
+    private Vertex searchByName(String name, SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph) {
+        for (Vertex noAtual : graph.vertexSet()) {
+            if (noAtual.getName().equals(name)) {
+                return noAtual;
+            }
+
+        }
+        return null;
+    }
 }
