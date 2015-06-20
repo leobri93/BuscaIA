@@ -5,66 +5,41 @@
  */
 package buscaia;
 
+import java.util.LinkedList;
+
 public class Vertex {
 
-    private String name;
+    private String nomeDaRuda;
     private int peso;
     private Vertex pai;
-    private double latitude;
-    private double longitude;
-    private int id;
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private LinkedList<Referencia> referencias;
 
     public Vertex() {
     }
 
     public Vertex(String name, int peso, Vertex pai) {
-        this.name = name;
+        this.nomeDaRuda = name;
         this.peso = peso;
         this.pai = pai;
+        this.referencias = null;
     }
 
-    public Vertex(String name, double latitude, double longitude, int id) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.id = id;
+    public void add(int id , double latitude, double longitude) {
+        Referencia ref = new Referencia(id, latitude, longitude);
+        referencias.add(ref);
     }
 
     public Vertex(String name, int peso) {
-        this.name = name;
+        this.nomeDaRuda = name;
         this.peso = peso;
     }
 
     public String getName() {
-        return name;
+        return nomeDaRuda;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.nomeDaRuda = name;
     }
 
     public int getPeso() {
