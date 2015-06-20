@@ -48,7 +48,6 @@ public class FileReader {
                             latLongReturn(refString, atual);
                         }
                         scan.nextLine();
-                        //thais é foda
                     }
                     //Adiciona o nome da rua ao vertice
                     atual.setName(nomeDaRua);
