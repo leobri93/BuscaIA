@@ -36,6 +36,8 @@ public class FileReader {
                     //Pega o nome da Rua
                     String nomeDaRua = nomeRua(openW);
                     Vertex atual = new Vertex();
+                    //Adiciona o nome da rua ao vertice
+                    atual.setName(nomeDaRua);
                     //Enquanto nao encerrar a leitura da rua
                     while (!scan.findInLine(closeWay).equals("\\way")) {
                         //Procura por um ref
@@ -49,8 +51,6 @@ public class FileReader {
                         }
                         scan.nextLine();
                     }
-                    //Adiciona o nome da rua ao vertice
-                    atual.setName(nomeDaRua);
                     //Adiciona na colecao
                     nos.add(atual);
                 }
@@ -93,7 +93,7 @@ public class FileReader {
                         longitude = longitude.replace("lon=\"", "");
                         
                         //Seta a latitude, longitude e ID
-                        atual.add(Integer.parseInt(refString), Integer.parseInt(latitude), Integer.parseInt(longitude));
+                        atual.add(Integer.parseInt(refString), Double.parseDouble(latitude), Double.parseDouble(longitude));
                         break;
                     }
                 }
