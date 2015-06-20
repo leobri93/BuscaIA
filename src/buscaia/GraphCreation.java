@@ -6,6 +6,7 @@
 package buscaia;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
@@ -19,7 +20,7 @@ public class GraphCreation {
      * @return
      * @throws FileNotFoundException
      */
-    public static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws FileNotFoundException {
+    public static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws FileNotFoundException, IOException {
         //cria um objeto da classe FileReader
         FileReader f = new FileReader();
         //recebe o conjunto de nós com as informações preenchidas

@@ -6,6 +6,7 @@
 package buscaia;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,7 +21,7 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 public class BuscaLargura {
 
     //UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
-    public List<String> BuscaEmLargura(String startRoad, String endRoad) throws FileNotFoundException {
+    public List<String> BuscaEmLargura(String startRoad, String endRoad) throws FileNotFoundException, IOException {
         //cria um grafo com as informações provenientes do arquivo
         SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
 

@@ -9,10 +9,10 @@ import java.util.LinkedList;
 
 public class Vertex {
 
-    private String nomeDaRuda;
+    private String nomeDaRua;
     private int peso;
     private Vertex pai;
-    private LinkedList<Referencia> referencias;
+    private final LinkedList<Referencia> referencias = new LinkedList<>();
 
     public LinkedList<Referencia> getReferencias() {
         return referencias;
@@ -22,10 +22,10 @@ public class Vertex {
     }
 
     public Vertex(String name, int peso, Vertex pai) {
-        this.nomeDaRuda = name;
+        this.nomeDaRua = name;
         this.peso = peso;
         this.pai = pai;
-        this.referencias = null;
+        
     }
 
     public void add(int id , double latitude, double longitude) {
@@ -34,16 +34,16 @@ public class Vertex {
     }
 
     public Vertex(String name, int peso) {
-        this.nomeDaRuda = name;
+        this.nomeDaRua = name;
         this.peso = peso;
     }
 
     public String getName() {
-        return nomeDaRuda;
+        return nomeDaRua;
     }
 
     public void setName(String name) {
-        this.nomeDaRuda = name;
+        this.nomeDaRua = name;
     }
 
     public int getPeso() {

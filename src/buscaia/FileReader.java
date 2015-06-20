@@ -7,6 +7,11 @@ package buscaia;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -16,9 +21,12 @@ import java.util.regex.Pattern;
 
 public class FileReader {
 
-    public Set<Vertex> reader() throws FileNotFoundException {
+    public Set<Vertex> reader() throws FileNotFoundException, IOException {
         Set<Vertex> nos = new HashSet();
-        File arq = new File("C:\\Users\\Leonardo\\Downloads\\map(1).osm");
+        File arq = new File("C:\\Users\\Leonardo\\Downloads\\map.osm");
+        String sPath = arq.getPath().replace(".", "(2).");
+        Path path = Paths.get(sPath);
+        Files.copy(arq.toPath(),path, REPLACE_EXISTING);
         try (Scanner scan = new Scanner(arq)) {
             //Padrao para comecar a ler uma rua
             Pattern openWay = Pattern.compile("([w][a][y][ ][i][d][=].\\d+)");
@@ -34,12 +42,14 @@ public class FileReader {
                     //Tratamento para pegar o ID da rua
                     openW = openW.replace("way id=\"", "");
                     //Pega o nome da Rua
-                    String nomeDaRua = nomeRua(openW);
+                    String nomeDaRua = nomeRua(openW, sPath);
                     Vertex atual = new Vertex();
                     //Adiciona o nome da rua ao vertice
                     atual.setName(nomeDaRua);
                     //Enquanto nao encerrar a leitura da rua
-                    while (!scan.findInLine(closeWay).equals("\\way")) {
+                    String  closeW = scan.findInLine(closeWay);
+                     // closeW.equals("\\way")
+                    while (closeW == null) {
                         //Procura por um ref
                         String refString = scan.findInLine(ref);
                         //Se encontrar
@@ -47,7 +57,7 @@ public class FileReader {
                             //Trata a string para pegar o ID
                             refString = refString.replace("ref=\"", "");
                             //Adiciona a latitude a longitude a um vertice
-                            latLongReturn(refString, atual);
+                            latLongReturn(refString, atual, sPath);
                         }
                         scan.nextLine();
                     }
@@ -65,8 +75,8 @@ public class FileReader {
      * @param refString
      * @param atual 
      */
-    private void latLongReturn(String refString, Vertex atual) {
-        File arq = new File("C:\\Users\\Leonardo\\Downloads\\map(1).osm");
+    private void latLongReturn(String refString, Vertex atual, String path) {
+        File arq = new File(path);
         try (Scanner scan = new Scanner(arq)) {
             
             //Padrao de reconhecimento de latitude e longitude
@@ -91,10 +101,11 @@ public class FileReader {
                         //Trata os strings para pegar somente as coordenadas
                         latitude = latitude.replace("lat=\"", "");
                         longitude = longitude.replace("lon=\"", "");
-                        
+                        if(latitude != null && longitude != null && refString != null){
                         //Seta a latitude, longitude e ID
                         atual.add(Integer.parseInt(refString), Double.parseDouble(latitude), Double.parseDouble(longitude));
-                        break;
+                        return;
+                        }
                     }
                 }
                 scan.nextLine();
@@ -109,37 +120,38 @@ public class FileReader {
      * @param openW
      * @return 
      */
-    private String nomeRua(String openW) {
-        File arq = new File("C:\\Users\\Leonardo\\Downloads\\map(1).osm");
-        try (Scanner scan = new Scanner(arq)) {
+    private String nomeRua(String openW, String path) {
+        File arq = new File(path);
+        try (Scanner scanner = new Scanner(arq)) {
             //Cria os padroes para inicio da leitura da rua e para o nome da rua
             Pattern openWay = Pattern.compile("([w][a][y][ ][i][d][=].\\d+)");
             Pattern nomeDaRua = Pattern.compile("([n][a][m][e][\"][ ][v][=].+[A-Za-z])");
             
-            while (scan.hasNextLine()) {
+            while (scanner.hasNextLine()) {
                 //Busca por leitura da rua
-                String idAtual = scan.findInLine(openWay);
-
+                String idAtual = scanner.findInLine(openWay);
+                
                 if (idAtual != null) {
                     //Trata a string da rua
                     idAtual = idAtual.replace("way id=\"", "");
                     
                     //Se o ID da rua lida for igual ao ID passado por parametro
                     if (idAtual.equals(openW)) {
-                        while (scan.hasNextLine()) {
+                        while (scanner.hasNextLine()) {
                             //Procura pelo padrao do nome da rua
-                            String rua = scan.findInLine(nomeDaRua);
+                            String rua = scanner.findInLine(nomeDaRua);
                             if (rua != null) {
                                 //Trata nome da rua
                                 rua = rua.replace("name\" v=\"", "");
                                 return rua;
                             }
-                            scan.nextLine();
+                            scanner.nextLine();
                         }
 
                     }
-                    scan.nextLine();
+                    
                 }
+                scanner.nextLine();
             }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(FileReader.class.getName()).log(Level.SEVERE, null, ex);

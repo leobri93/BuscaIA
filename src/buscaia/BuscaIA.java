@@ -5,6 +5,9 @@
  */
 package buscaia;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
 
 
 
@@ -12,11 +15,15 @@ public class BuscaIA {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.FileNotFoundException
      */
     //Primeiro trabalho de IA: Desenvolver três métodos de busca entre dois pontos//
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         BuscaLargura bl = new BuscaLargura();
-        //System.out.println(bl.BuscaEmLargura("Itaipu", "Centro"));
+        for(String atual: bl.BuscaEmLargura("Rua Matias Sandri", "Rua dos Cravos")){
+            System.out.println(atual);
+        }
+        
     }
     
 }
