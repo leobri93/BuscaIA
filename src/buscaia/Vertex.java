@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class Vertex {
 
     private String nomeDaRua;
-    private int peso;
+    private double heuristica;
     private Vertex pai;
     private final LinkedList<Referencia> referencias = new LinkedList<>();
 
@@ -21,19 +21,19 @@ public class Vertex {
     public Vertex() {
     }
 
-    public Vertex(String name, int peso, Vertex pai) {
+    public Vertex(String name, double heuristica, Vertex pai) {
         this.nomeDaRua = name;
-        this.peso = peso;
+        this.heuristica = heuristica;
         this.pai = pai;
-        
+
     }
 
-    public Vertex(String name, int peso) {
+    public Vertex(String name, double heuristica) {
         this.nomeDaRua = name;
-        this.peso = peso;
+        this.heuristica = heuristica;
     }
-    
-    public void add(long id , double latitude, double longitude) {
+
+    public void add(long id, double latitude, double longitude) {
         Referencia ref = new Referencia(id, latitude, longitude);
         referencias.add(ref);
     }
@@ -46,12 +46,12 @@ public class Vertex {
         this.nomeDaRua = name;
     }
 
-    public int getPeso() {
-        return peso;
+    public double getHeuristica() {
+        return heuristica;
     }
 
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setHeuristica(double heuristica) {
+        this.heuristica = heuristica;
     }
 
     public Vertex getPai() {
@@ -60,6 +60,19 @@ public class Vertex {
 
     public void setPai(Vertex pai) {
         this.pai = pai;
+    }
+
+    public double getLatitudeCentral() {
+        return getReferenciaCentral().getLatitude();
+    }
+
+    public double getLongitudeCentral() {
+        return getReferenciaCentral().getLongitude();
+    }
+
+    public Referencia getReferenciaCentral() {
+        int count = referencias.size();
+        return referencias.get((int) (count / 2));
     }
 
 }
