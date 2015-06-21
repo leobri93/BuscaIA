@@ -4,16 +4,12 @@
  */
 package buscaia;
 
-/**
- *
- * @author thais_maiolino
- */
 public class Referencia {
     private double latitude;
     private double longitude;
-    private int id;
+    private long id;
 
-    public Referencia(int id, double latitude, double longitude) {
+    public Referencia(long id, double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.id = id;
@@ -35,11 +31,11 @@ public class Referencia {
         this.longitude = longitude;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 }

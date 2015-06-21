@@ -21,7 +21,7 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 public class BuscaLargura {
 
     //UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
-    public List<String> BuscaEmLargura(String startRoad, String endRoad) throws FileNotFoundException, IOException {
+    public List<String> BuscaEmLargura(String startRoad, String endRoad) throws IOException {
         //cria um grafo com as informações provenientes do arquivo
         SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
 

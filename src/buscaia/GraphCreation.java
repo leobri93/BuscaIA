@@ -20,7 +20,7 @@ public class GraphCreation {
      * @return
      * @throws FileNotFoundException
      */
-    public static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws FileNotFoundException, IOException {
+    public static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws IOException {
         //cria um objeto da classe FileReader
         FileReader f = new FileReader();
         //recebe o conjunto de nós com as informações preenchidas

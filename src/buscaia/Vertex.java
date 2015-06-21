@@ -28,14 +28,14 @@ public class Vertex {
         
     }
 
-    public void add(int id , double latitude, double longitude) {
-        Referencia ref = new Referencia(id, latitude, longitude);
-        referencias.add(ref);
-    }
-
     public Vertex(String name, int peso) {
         this.nomeDaRua = name;
         this.peso = peso;
+    }
+    
+    public void add(long id , double latitude, double longitude) {
+        Referencia ref = new Referencia(id, latitude, longitude);
+        referencias.add(ref);
     }
 
     public String getName() {
