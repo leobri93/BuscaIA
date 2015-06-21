@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.4.0 (22888 thorn-02.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="-22.9732000" minlon="-43.0333000" maxlat="-22.9704000" maxlon="-43.0304000"/>
+ <node id="267936643" visible="true" version="5" changeset="17559799" timestamp="2013-08-28T18:46:00Z" user="naoliv" uid="463507" lat="-22.9729202" lon="-43.0326241">
+  <tag k="is_in" v="Niteroí"/>
+  <tag k="name" v="Itacoatiara"/>
+  <tag k="place" v="suburb"/>
+ </node>
+ <node id="267936610" visible="true" version="9" changeset="13159117" timestamp="2012-09-18T18:23:03Z" user="Alexandrecw" uid="893594" lat="-22.9726844" lon="-43.0320574"/>
+ <node id="267936613" visible="true" version="7" changeset="13159117" timestamp="2012-09-18T18:23:03Z" user="Alexandrecw" uid="893594" lat="-22.9736528" lon="-43.0321432"/>
+ <node id="267936633" visible="true" version="14" changeset="13159117" timestamp="2012-09-18T18:23:03Z" user="Alexandrecw" uid="893594" lat="-22.9733041" lon="-43.0321224"/>
+ <node id="320631566" visible="true" version="5" changeset="13159117" timestamp="2012-09-18T18:23:04Z" user="Alexandrecw" uid="893594" lat="-22.9721021" lon="-43.0320395"/>
+ <node id="320631511" visible="true" version="6" changeset="13159117" timestamp="2012-09-18T18:23:04Z" user="Alexandrecw" uid="893594" lat="-22.9714002" lon="-43.0320364"/>
+ <node id="320631510" visible="true" version="1" changeset="538597" timestamp="2008-12-21T17:39:01Z" user="Skippern" uid="31385" lat="-22.9712487" lon="-43.0331834"/>
+ <node id="320631738" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T17:59:33Z" user="Alexandrecw" uid="893594" lat="-22.9730260" lon="-43.0286542"/>
+ <node id="320631686" visible="true" version="1" changeset="538597" timestamp="2008-12-21T17:39:39Z" user="Skippern" uid="31385" lat="-22.9718809" lon="-43.0336126"/>
+ <node id="320631737" visible="true" version="1" changeset="538597" timestamp="2008-12-21T17:39:52Z" user="Skippern" uid="31385" lat="-22.9729873" lon="-43.0294240"/>
+ <node id="320631688" visible="true" version="2" changeset="13172845" timestamp="2012-09-19T17:15:54Z" user="Alexandrecw" uid="893594" lat="-22.9721848" lon="-43.0306428"/>
+ <node id="320631839" visible="true" version="1" changeset="538597" timestamp="2008-12-21T17:40:10Z" user="Skippern" uid="31385" lat="-22.9706007" lon="-43.0332435"/>
+ <node id="320631953" visible="true" version="4" changeset="13159117" timestamp="2012-09-18T18:23:04Z" user="Alexandrecw" uid="893594" lat="-22.9700561" lon="-43.0319447"/>
+ <node id="320631838" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T18:23:04Z" user="Alexandrecw" uid="893594" lat="-22.9706931" lon="-43.0319176"/>
+ <node id="320705622" visible="true" version="1" changeset="538597" timestamp="2008-12-21T20:37:56Z" user="Skippern" uid="31385" lat="-22.9738615" lon="-43.0321041"/>
+ <node id="320631836" visible="true" version="3" changeset="20856427" timestamp="2014-03-01T23:52:14Z" user="Helio Coutinho" uid="1819774" lat="-22.9704024" lon="-43.0296600"/>
+ <node id="1920524680" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9729786" lon="-43.0284047"/>
+ <node id="1920524681" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9714414" lon="-43.0314131"/>
+ <node id="1920524684" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9705266" lon="-43.0303027"/>
+ <node id="1920524685" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9726773" lon="-43.0281526"/>
+ <node id="1920524687" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9718024" lon="-43.0288449"/>
+ <node id="1920524688" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9704822" lon="-43.0300802"/>
+ <node id="1920524698" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T17:59:32Z" user="Alexandrecw" uid="893594" lat="-22.9728260" lon="-43.0282586"/>
+ <node id="320631837" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T17:59:33Z" user="Alexandrecw" uid="893594" lat="-22.9705822" lon="-43.0307670"/>
+ <node id="320631512" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T17:59:33Z" user="Alexandrecw" uid="893594" lat="-22.9715742" lon="-43.0303960"/>
+ <node id="320631513" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T17:59:33Z" user="Alexandrecw" uid="893594" lat="-22.9716928" lon="-43.0293832"/>
+ <node id="1920544078" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:22Z" user="Alexandrecw" uid="893594" lat="-22.9705279" lon="-43.0337439"/>
+ <node id="1920544098" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9717147" lon="-43.0347736"/>
+ <node id="1920544118" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9716304" lon="-43.0349788"/>
+ <node id="1920544124" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9724560" lon="-43.0339938"/>
+ <node id="1920544155" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9718524" lon="-43.0339066"/>
+ <node id="1920544168" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9711605" lon="-43.0338205"/>
+ <node id="1920544171" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:13:23Z" user="Alexandrecw" uid="893594" lat="-22.9717045" lon="-43.0348528"/>
+ <node id="320705621" visible="true" version="2" changeset="13159117" timestamp="2012-09-18T18:13:25Z" user="Alexandrecw" uid="893594" lat="-22.9741295" lon="-43.0320151"/>
+ <node id="320705620" visible="true" version="7" changeset="13159117" timestamp="2012-09-18T18:13:25Z" user="Alexandrecw" uid="893594" lat="-22.9742505" lon="-43.0319934"/>
+ <node id="1920553158" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9738202" lon="-43.0321958"/>
+ <node id="1920553159" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9733124" lon="-43.0320460"/>
+ <node id="1920553162" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9721074" lon="-43.0319734"/>
+ <node id="1920553163" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9726857" lon="-43.0319872"/>
+ <node id="1920553153" visible="true" version="3" changeset="20856427" timestamp="2014-03-01T23:52:14Z" user="Helio Coutinho" uid="1819774" lat="-22.9694178" lon="-43.0318760"/>
+ <node id="1920553167" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9735813" lon="-43.0320552"/>
+ <node id="1920553169" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9739026" lon="-43.0323045"/>
+ <node id="1920553170" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:02Z" user="Alexandrecw" uid="893594" lat="-22.9739595" lon="-43.0324455"/>
+ <node id="1920553165" visible="true" version="2" changeset="20856427" timestamp="2014-03-01T23:52:14Z" user="Helio Coutinho" uid="1819774" lat="-22.9696479" lon="-43.0319347"/>
+ <node id="1920553175" visible="true" version="1" changeset="13159117" timestamp="2012-09-18T18:23:03Z" user="Alexandrecw" uid="893594" lat="-22.9714057" lon="-43.0319659"/>
+ <node id="1920553173" visible="true" version="2" changeset="20856427" timestamp="2014-03-01T23:52:14Z" user="Helio Coutinho" uid="1819774" lat="-22.9700509" lon="-43.0318858"/>
+ <node id="1920553161" visible="true" version="3" changeset="21468652" timestamp="2014-04-03T02:36:32Z" user="Fernando Trebien" uid="401472" lat="-22.9729124" lon="-43.0320139"/>
+ <node id="1920553157" visible="true" version="3" changeset="21468652" timestamp="2014-04-03T02:36:33Z" user="Fernando Trebien" uid="401472" lat="-22.9706873" lon="-43.0319851"/>
+ <node id="1922145204" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:06:41Z" user="Alexandrecw" uid="893594" lat="-22.9721955" lon="-43.0362531"/>
+ <node id="1922145231" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:06:41Z" user="Alexandrecw" uid="893594" lat="-22.9715812" lon="-43.0350663"/>
+ <node id="1922145249" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:06:42Z" user="Alexandrecw" uid="893594" lat="-22.9710401" lon="-43.0346067"/>
+ <node id="1922145251" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:06:42Z" user="Alexandrecw" uid="893594" lat="-22.9704367" lon="-43.0341890"/>
+ <node id="1922162123" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:15:53Z" user="Alexandrecw" uid="893594" lat="-22.9729434" lon="-43.0297975"/>
+ <node id="1922162136" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:15:53Z" user="Alexandrecw" uid="893594" lat="-22.9722812" lon="-43.0297484"/>
+ <node id="1920524699" visible="true" version="2" changeset="13172845" timestamp="2012-09-19T17:15:54Z" user="Alexandrecw" uid="893594" lat="-22.9724618" lon="-43.0282105"/>
+ <node id="1922219157" visible="true" version="1" changeset="13172845" timestamp="2012-09-19T17:56:49Z" user="Alexandrecw" uid="893594" lat="-22.9740168" lon="-43.0325236"/>
+ <node id="1938788327" visible="true" version="1" changeset="13303001" timestamp="2012-09-29T22:20:36Z" user="Nighto" uid="12293" lat="-22.9709102" lon="-43.0319323">
+  <tag k="traffic_calming" v="bump"/>
+ </node>
+ <node id="1938788328" visible="true" version="1" changeset="13303001" timestamp="2012-09-29T22:20:36Z" user="Nighto" uid="12293" lat="-22.9708922" lon="-43.0319998">
+  <tag k="traffic_calming" v="bump"/>
+ </node>
+ <node id="2697003242" visible="true" version="1" changeset="20856427" timestamp="2014-03-01T23:52:12Z" user="Helio Coutinho" uid="1819774" lat="-22.9722162" lon="-43.0360739"/>
+ <node id="1920557650" visible="true" version="3" changeset="20856427" timestamp="2014-03-01T23:52:14Z" user="Helio Coutinho" uid="1819774" lat="-22.9695507" lon="-43.0320235"/>
+ <node id="320631690" visible="true" version="4" changeset="21468652" timestamp="2014-04-03T01:33:27Z" user="Fernando Trebien" uid="401472" lat="-22.9724342" lon="-43.0284163"/>
+ <node id="320631689" visible="true" version="4" changeset="21468652" timestamp="2014-04-03T01:33:28Z" user="Fernando Trebien" uid="401472" lat="-22.9723107" lon="-43.0294749"/>
+ <way id="24649673" visible="true" version="9" changeset="20856427" timestamp="2014-03-01T23:52:16Z" user="Helio Coutinho" uid="1819774">
+  <nd ref="1922145204"/>
+  <nd ref="2697003242"/>
+  <nd ref="1920544124"/>
+  <nd ref="267936610"/>
+  <nd ref="1920553163"/>
+  <nd ref="1922162123"/>
+  <nd ref="320631737"/>
+  <nd ref="320631738"/>
+  <nd ref="1920524680"/>
+  <nd ref="1920524698"/>
+  <nd ref="1920524685"/>
+  <nd ref="1920524699"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Rua dos Cravos"/>
+  <tag k="oneway" v="no"/>
+ </way>
+ <way id="29148606" visible="true" version="4" changeset="13172845" timestamp="2012-09-19T17:06:43Z" user="Alexandrecw" uid="893594">
+  <nd ref="320631836"/>
+  <nd ref="1920524688"/>
+  <nd ref="1920524684"/>
+  <nd ref="320631837"/>
+  <nd ref="320631838"/>
+  <nd ref="320631839"/>
+  <nd ref="1920544078"/>
+  <nd ref="1922145251"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Rua dos Ipês"/>
+  <tag k="oneway" v="no"/>
+ </way>
+ <way id="181644235" visible="true" version="6" changeset="21468652" timestamp="2014-04-03T03:05:37Z" user="Fernando Trebien" uid="401472">
+  <nd ref="1922145231"/>
+  <nd ref="1920544118"/>
+  <nd ref="1920544171"/>
+  <nd ref="1920544098"/>
+  <nd ref="1920544155"/>
+  <nd ref="320631686"/>
+  <nd ref="320631566"/>
+  <nd ref="1920553162"/>
+  <nd ref="320631688"/>
+  <nd ref="1922162136"/>
+  <nd ref="320631689"/>
+  <nd ref="320631690"/>
+  <nd ref="1920524699"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Rua das Camélias"/>
+ </way>
+ <way id="182039400" visible="true" version="5" changeset="21468652" timestamp="2014-04-03T03:07:38Z" user="Fernando Trebien" uid="401472">
+  <nd ref="1920557650"/>
+  <nd ref="1920553165"/>
+  <nd ref="320631953"/>
+  <nd ref="1920553157"/>
+  <nd ref="1938788328"/>
+  <nd ref="320631511"/>
+  <nd ref="320631566"/>
+  <nd ref="267936610"/>
+  <nd ref="267936633"/>
+  <nd ref="267936613"/>
+  <nd ref="1920553158"/>
+  <nd ref="1920553169"/>
+  <nd ref="1920553170"/>
+  <nd ref="1922219157"/>
+  <tag k="alt_name" v="Rua do Meio"/>
+  <tag k="highway" v="tertiary"/>
+  <tag k="name" v="Rua Matias Sandri"/>
+  <tag k="oneway" v="yes"/>
+ </way>
+ <way id="29148535" visible="true" version="6" changeset="20856427" timestamp="2014-03-01T23:52:16Z" user="Helio Coutinho" uid="1819774">
+  <nd ref="1922145249"/>
+  <nd ref="1920544168"/>
+  <nd ref="320631510"/>
+  <nd ref="320631511"/>
+  <nd ref="1920553175"/>
+  <nd ref="1920524681"/>
+  <nd ref="320631512"/>
+  <nd ref="320631513"/>
+  <nd ref="1920524687"/>
+  <tag k="highway" v="residential"/>
+  <tag k="name" v="Rua das Margaridas"/>
+  <tag k="oneway" v="no"/>
+ </way>
+ <way id="29157111" visible="true" version="11" changeset="21468652" timestamp="2014-04-03T03:07:40Z" user="Fernando Trebien" uid="401472">
+  <nd ref="320705620"/>
+  <nd ref="320705621"/>
+  <nd ref="320705622"/>
+  <nd ref="1920553167"/>
+  <nd ref="1920553159"/>
+  <nd ref="1920553161"/>
+  <nd ref="1920553163"/>
+  <nd ref="1920553162"/>
+  <nd ref="1920553175"/>
+  <nd ref="1938788327"/>
+  <nd ref="320631838"/>
+  <nd ref="1920553173"/>
+  <nd ref="1920553153"/>
+  <tag k="alt_name" v="Rua do Meio"/>
+  <tag k="highway" v="tertiary"/>
+  <tag k="name" v="Rua Matias Sandri"/>
+  <tag k="oneway" v="yes"/>
+ </way>
+</osm>
