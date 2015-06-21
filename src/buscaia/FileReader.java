@@ -23,7 +23,7 @@ public class FileReader {
 
     public Set<Vertex> reader() throws IOException {
         Set<Vertex> nos = new HashSet();
-        File arq = new File("C:\\Users\\Leonardo\\Downloads\\map.osm");
+        File arq = new File("C:\\Users\\ViniciusVasconcellos\\Documents\\NetBeansProjects\\BuscaIA\\map.osm");
         String sPath = arq.getPath().replace(".", "(2).");
         Path path = Paths.get(sPath);
         Files.copy(arq.toPath(), path, REPLACE_EXISTING);
@@ -60,7 +60,9 @@ public class FileReader {
                             //Adiciona a latitude a longitude a um vertice
                             latLongReturn(refString, atual, sPath);
                         }
-                        scan.nextLine();
+                        if(closeW == null){
+                            scan.nextLine();
+                        }
                     }
                     //Adiciona na colecao
                     nos.add(atual);
