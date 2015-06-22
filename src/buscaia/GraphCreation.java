@@ -7,6 +7,7 @@ package buscaia;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
@@ -26,8 +27,11 @@ public class GraphCreation {
         //recebe o conjunto de nós com as informações preenchidas
         Set<Vertex> nos = f.reader();
         SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+        
+        Set<Vertex> copia = new HashSet<>();
+        copia.addAll(nos);
         //itera sobre o conjunto de nós para adiciona-los no grafo 
-        for (Vertex noAtual : nos) {
+        for (Vertex noAtual : copia) {
             //adiciona o nó atual no grafo se ele nao existir
             if (!graph.containsVertex(noAtual)) {
                 graph.addVertex(noAtual);
