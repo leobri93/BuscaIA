@@ -5,6 +5,7 @@
  */
 package buscaia;
 
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,13 +18,14 @@ import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 //import org.jgrapht.graph.SimpleGraph;
+import org.jgrapht.graph.SimpleWeightedGraph;
 
 public class BuscaLargura {
 
     //UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
     public List<String> BuscaEmLargura(String startRoad, String endRoad) throws IOException {
         //cria um grafo com as informações provenientes do arquivo
-        SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
+        SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
 
         //cria os vertices Inicio e Fim
         Vertex start = searchByName(startRoad, graph);
@@ -34,7 +36,15 @@ public class BuscaLargura {
             Set<DefaultWeightedEdge> tempRetorno = graph.edgesOf(start);
             // Cria uma fila de vizinhos e adiciona os vizinhos
             Queue<DefaultWeightedEdge> vizinhos = new LinkedList<>();
-            vizinhos.addAll(tempRetorno);
+
+            //Loop para pegar cada aresta e adicionar a vizinhos somente as arestas que tem start como source
+            for (DefaultWeightedEdge each : tempRetorno) {
+                if (graph.getEdgeSource(each).equals(start)) {
+                    vizinhos.add(each);
+                }
+            }
+            //vizinhos.addAll(tempRetorno);
+
             //cria uma lista de vistados e adiciona o nó inicial
             List<Vertex> visitados = new ArrayList<>();
             visitados.add(start);
@@ -54,9 +64,14 @@ public class BuscaLargura {
                     //
                     return path(graph.getEdgeTarget(temp));
                 } else {
-                    //Se não chegou ao fim, adiciona as arestas do target a lista de vizinhos
-
-                    vizinhos.addAll(graph.edgesOf(graph.getEdgeTarget(temp)));
+                    //Se não chegou ao fim, adiciona as arestas a partir do target a lista de vizinhos
+                    for (DefaultWeightedEdge each : graph.edgesOf(graph.getEdgeTarget(temp))) {
+                        //Se a origem da aresta for igual ao destino de temp e vizinhos não contem o destino da aresta e o destino da aresta não foi vizitado.
+                        if (graph.getEdgeSource(each).equals(graph.getEdgeTarget(temp)) && !vizinhos.contains(graph.getEdgeTarget(each)) && !visitados.contains(graph.getEdgeTarget(each))) {
+                            vizinhos.add(each);
+                        }
+                    }
+                    //vizinhos.addAll(graph.edgesOf(graph.getEdgeTarget(temp)));
                 }
             }
         }
@@ -64,15 +79,14 @@ public class BuscaLargura {
     }
 
     private List<String> path(Vertex end) {
-        
+
         List<String> list = new LinkedList<>();
         list.add(end.getName());
         Vertex temp = end.getPai();
-        while(temp!=null){
+        while (temp != null) {
             list.add(temp.getName());
             temp = temp.getPai();
         }
-        
         return list;
     }
 
@@ -103,12 +117,11 @@ public class BuscaLargura {
 //
 //        return g;
 //    }
-    private Vertex searchByName(String name, SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph) {
+    private Vertex searchByName(String name, SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph) {
         for (Vertex noAtual : graph.vertexSet()) {
             if (noAtual.getName().equals(name)) {
                 return noAtual;
             }
-
         }
         return null;
     }
