@@ -6,7 +6,7 @@
 package buscaia;
 
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleDirectedWeightedGraph;
+import org.jgrapht.graph.SimpleWeightedGraph;
 
 /**
  *
@@ -14,14 +14,14 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
  */
 public class Heuristica {
 
-    SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph;
+    SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph;
     int tipoHeuristica = 0;
 
-    Heuristica(SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> pGraph) {
+    Heuristica(SimpleWeightedGraph<Vertex, DefaultWeightedEdge> pGraph) {
         this.graph = pGraph;
     }
     
-    Heuristica(SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> pGraph, int tipoHeuristica) {
+    Heuristica(SimpleWeightedGraph<Vertex, DefaultWeightedEdge> pGraph, int tipoHeuristica) {
         this.graph = pGraph;
         this.tipoHeuristica = tipoHeuristica;
     }
@@ -34,7 +34,7 @@ public class Heuristica {
         return v.getHeuristica();
     }
 
-    public double retornaPesoAresta(SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> sg, DefaultWeightedEdge d) {
+    public double retornaPesoAresta(SimpleWeightedGraph<Vertex, DefaultWeightedEdge> sg, DefaultWeightedEdge d) {
         return sg.getEdgeWeight(d);
     }
     
