@@ -7,7 +7,7 @@ package buscaia;
 
 import java.util.LinkedList;
 
-public class Vertex {
+public class Vertex extends Object{
 
     private String nomeDaRua;
     private double heuristica;
@@ -73,6 +73,22 @@ public class Vertex {
     public Referencia getReferenciaCentral() {
         int count = referencias.size();
         return referencias.get((int) (count / 2));
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Vertex temp = (Vertex) obj;
+
+        if (this.getHeuristica() == temp.getHeuristica() && this.getName().equals(temp.getName()) && this.getPai() == temp.getPai() && this.getReferencias().containsAll(temp.getReferencias()) && temp.getReferencias().addAll(this.getReferencias())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
