@@ -20,7 +20,7 @@ public class BuscaIA {
     //Primeiro trabalho de IA: Desenvolver três métodos de busca entre dois pontos//
     public static void main(String[] args) throws IOException {
         BuscaLargura bl = new BuscaLargura();
-        for(String atual: bl.BuscaEmLargura("Rua Matias Sandri", "Rua dos Cravos")){
+        for(String atual: bl.BuscaEmLargura("Rua das Margaridas", "Rua dos Cravos")){
             System.out.println(atual);
         }
         

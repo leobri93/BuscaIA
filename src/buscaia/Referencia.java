@@ -4,7 +4,8 @@
  */
 package buscaia;
 
-public class Referencia {
+public class Referencia extends Object {
+
     private double latitude;
     private double longitude;
     private long id;
@@ -13,7 +14,7 @@ public class Referencia {
         this.latitude = latitude;
         this.longitude = longitude;
         this.id = id;
-    }    
+    }
 
     public double getLatitude() {
         return latitude;
@@ -37,5 +38,24 @@ public class Referencia {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        
+        final Referencia other = (Referencia) obj;
+        
+        if (getId() == other.getId() && getLatitude() == other.getLatitude() && getLongitude() == other.getLongitude()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
