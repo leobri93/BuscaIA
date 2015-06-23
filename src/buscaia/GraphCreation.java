@@ -11,7 +11,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleDirectedWeightedGraph;
+import org.jgrapht.graph.SimpleWeightedGraph;
+
 
 public class GraphCreation {
 
@@ -21,12 +22,12 @@ public class GraphCreation {
      * @return
      * @throws FileNotFoundException
      */
-    public static SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws IOException {
+    public static SimpleWeightedGraph<Vertex, DefaultWeightedEdge> createGraph() throws IOException {
         //cria um objeto da classe FileReader
         FileReader f = new FileReader();
         //recebe o conjunto de nós com as informações preenchidas
         Set<Vertex> nos = f.reader();
-        SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph = new SimpleDirectedWeightedGraph<>(DefaultWeightedEdge.class);
+        SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
         
         Set<Vertex> copia = new HashSet<>();
         copia.addAll(nos);
