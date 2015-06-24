@@ -12,18 +12,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class FileReader {
 
-    public Set<Vertex> reader() throws IOException {
-        Set<Vertex> nos = new HashSet();
-        File arq = new File("C:\\Users\\ViniciusVasconcellos\\Documents\\NetBeansProjects\\BuscaIA\\map.osm");
+    public List<Vertex> reader() throws IOException {
+        List<Vertex> nos = new LinkedList();
+        File arq = new File("C:\\Projects\\UFF\\BuscaIA\\map.osm");
         String sPath = arq.getPath().replace(".", "(2).");
         Path path = Paths.get(sPath);
         Files.copy(arq.toPath(), path, REPLACE_EXISTING);

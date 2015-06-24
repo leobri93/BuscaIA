@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
@@ -26,10 +27,11 @@ public class GraphCreation {
         //cria um objeto da classe FileReader
         FileReader f = new FileReader();
         //recebe o conjunto de nós com as informações preenchidas
-        Set<Vertex> nos = f.reader();
+        List<Vertex> nos = f.reader();
         SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph = new SimpleWeightedGraph<>(DefaultWeightedEdge.class);
         
-        Set<Vertex> copia = new HashSet<>();
+        List<Vertex> copia = new LinkedList<>();
+        List<Referencia> tempList = new LinkedList<>();
         copia.addAll(nos);
         //itera sobre o conjunto de nós para adiciona-los no grafo 
         for (Vertex noAtual : copia) {
@@ -44,7 +46,8 @@ public class GraphCreation {
                 //percorre novamente o conjunto para adicionar as arestas
                 for (Vertex no : nos) {
                     //Percorre o conjunto
-                    for (Referencia ref : no.getReferencias()) {
+                    tempList.addAll(no.getReferencias());
+                    for (Referencia ref : tempList) {
                         //caso o id do nó atual seja igual ao id de algum outro nó do conjunto
                         if (noAtual.getReferencias().contains(ref)) {
                             //Se esse no nao existir no grafo ele é adicionado
@@ -55,6 +58,7 @@ public class GraphCreation {
                             graph.addEdge(no, noAtual);
                         }
                     }
+                    tempList.removeAll(tempList);
                 }
             }
         }

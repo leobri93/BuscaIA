@@ -5,8 +5,6 @@
  */
 package buscaia;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -16,7 +14,6 @@ import java.util.Set;
 //import org.jgrapht.graph.DefaultEdge;
 //import org.jgrapht.UndirectedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 //import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.graph.SimpleWeightedGraph;
 

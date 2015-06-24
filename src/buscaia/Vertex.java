@@ -6,6 +6,7 @@
 package buscaia;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Vertex extends Object{
 
