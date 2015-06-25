@@ -7,16 +7,11 @@ package buscaia;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.jgrapht.UndirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
 import org.jgrapht.graph.DefaultWeightedEdge;
-import org.jgrapht.graph.SimpleGraph;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
 

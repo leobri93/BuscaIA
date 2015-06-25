@@ -36,7 +36,7 @@ public class BuscaLargura {
 
             //Loop para pegar cada aresta e adicionar a vizinhos somente as arestas que tem start como source
             for (DefaultWeightedEdge each : tempRetorno) {
-                if (graph.getEdgeSource(each).equals(start)) {
+                if (graph.getEdgeSource(each).getName().equals(start.getName())) {
                     vizinhos.add(each);
                 }
             }
@@ -51,20 +51,24 @@ public class BuscaLargura {
                 //Se o vizinho nao foi visitado
                 if (!visitados.contains(graph.getEdgeTarget(vizinhos.peek()))) {
                     temp = vizinhos.poll();
-                    //Seta o pai do proximo vertice
-                    graph.getEdgeTarget(temp).setPai(graph.getEdgeSource(temp));
+                    if(!graph.getEdgeTarget(temp).getName().equals(start.getName())){
+                        //Seta o pai do proximo vertice
+                        graph.getEdgeTarget(temp).setPai(graph.getEdgeSource(temp));
+                    }
                     //Adiciona o vizinho aos visitados
                     visitados.add(graph.getEdgeTarget(temp));
                 }
                 //Se chegou ao fim
-                if (graph.getEdgeTarget(temp).equals(end)) {
+                if (graph.getEdgeTarget(temp).getName().equals(end.getName())) {
                     //
                     return path(graph.getEdgeTarget(temp));
                 } else {
                     //Se não chegou ao fim, adiciona as arestas a partir do target a lista de vizinhos
                     for (DefaultWeightedEdge each : graph.edgesOf(graph.getEdgeTarget(temp))) {
-                        //Se a origem da aresta for igual ao destino de temp e vizinhos não contem o destino da aresta e o destino da aresta não foi vizitado.
-                        if (graph.getEdgeSource(each).equals(graph.getEdgeTarget(temp)) && !vizinhos.contains(graph.getEdgeTarget(each)) && !visitados.contains(graph.getEdgeTarget(each))) {
+                        //Se a origem da aresta for igual ao destino de temp e vizinhos não contem o destino da aresta e o destino da aresta não foi visitado.
+                        if (graph.getEdgeSource(each).getName().equals(graph.getEdgeTarget(temp).getName()) && 
+                            !vizinhos.contains(graph.getEdgeTarget(each)) && 
+                            !visitados.contains(graph.getEdgeTarget(each))) {
                             vizinhos.add(each);
                         }
                     }
