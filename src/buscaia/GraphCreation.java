@@ -80,10 +80,11 @@ public class GraphCreation {
         return graph;
     }
      //Criar um metodo que Graph creation
-    private static UndirectedGraph<String, DefaultEdge> createStringGraph() {
-        UndirectedGraph<String, DefaultEdge> g = new SimpleGraph<String, DefaultEdge>(DefaultEdge.class);
+    private  SimpleWeightedGraph<Vertex, DefaultEdge> createStringGraph() {
+        SimpleWeightedGraph<Vertex, DefaultEdge> g = new SimpleWeightedGraph<Vertex, DefaultEdge>(DefaultEdge.class);
         
-        String avbeiramar = "Avenida Beira Mar";
+        
+        Vertex avbeiramar = new Vertex("Avenida Beira Mar",Math.random()*100);
         String rosas = "Rua das Rosas";
         String camelias = "Rua das Camelias";
         String cravos = "Rua dos Cravos";

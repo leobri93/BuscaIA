@@ -23,7 +23,16 @@ public class BuscaAEstrela {
             visitados.add(start);
             Vertex atual = frontier.poll().getVertice();
             
+            List<Frontier> listaDesordenada = new LinkedList<>();
+            
             while(!atual.equals(end)){
+                for(DefaultWeightedEdge aresta : graph.edgesOf(atual)){
+                    if(graph.getEdgeSource(aresta).equals(atual)){
+                        Frontier tempFrontier = new Frontier(graph.getEdgeTarget(aresta), graph.getEdgeWeight(aresta)+graph.getEdgeTarget(aresta).getHeuristica());
+                        listaDesordenada.add(tempFrontier);
+                    }
+                }
+                insereOrdenadoNoFrontier(listaDesordenada, frontier);
                 
             }
         }
@@ -38,6 +47,14 @@ public class BuscaAEstrela {
             }
         }
         return null;
+    }
+
+    private void insereOrdenadoNoFrontier(List<Frontier> listaDesordenada, Queue<Frontier> frontier) {
+        while(!frontier.isEmpty()){
+            listaDesordenada.add(frontier.poll());
+        }
+        Frontier[] arrayDeFrontier = new 
+        Sort. ordena = new Sort();
     }
 
 }
