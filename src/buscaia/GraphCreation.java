@@ -80,31 +80,31 @@ public class GraphCreation {
         return graph;
     }
      //Criar um metodo que Graph creation
-    private  SimpleWeightedGraph<Vertex, DefaultEdge> createStringGraph() {
-        SimpleWeightedGraph<Vertex, DefaultEdge> g = new SimpleWeightedGraph<Vertex, DefaultEdge>(DefaultEdge.class);
+    public static SimpleWeightedGraph<Vertex, DefaultWeightedEdge> createVertexGraph() {
+        SimpleWeightedGraph<Vertex, DefaultWeightedEdge> g = new SimpleWeightedGraph<Vertex, DefaultWeightedEdge>(DefaultWeightedEdge.class);
         
         
         Vertex avbeiramar = new Vertex("Avenida Beira Mar",Math.random()*100);
-        String rosas = "Rua das Rosas";
-        String camelias = "Rua das Camelias";
-        String cravos = "Rua dos Cravos";
-        String margaridas = "Rua das Margaridas";
-        String ipes = "Rua dos Ipes";
-        String violetas = "Rua das Violetas";
-        String hortencias = "Rua das Hortencias";
-        String geranios = "Rua das Geranios";
-        String tulipas = "Rua das Tulipas";
-        String matiasSandri = "Rua das Matias Sandri";
-        String papoulas = "Rua das Papolas";
-        String acacias = "Rua das Acacias";
-        String jasmins = "Rua dos Jamins";
-        String magnolias = "Rua das Magnolias";
-        String lirios = "Rua dos Lirios";
-        String begonias = "Rua das Begonias";
-        String orquideas = "Rua das Orquideas";
-        String perpetuas = "Rua das Perpetuas";
-        String petuinas = "Rua das Petuinas";
-        String manacas = "Rua dos Manacas";
+        Vertex rosas = new Vertex("Rua das Rosas",Math.random()*100);
+        Vertex camelias = new Vertex("Rua das Camelias",Math.random()*100);
+        Vertex cravos = new Vertex("Rua dos Cravos",Math.random()*100);
+        Vertex margaridas =new Vertex( "Rua das Margaridas",Math.random()*100);
+        Vertex ipes = new Vertex("Rua dos Ipes",Math.random()*100);
+        Vertex violetas =new Vertex( "Rua das Violetas",Math.random()*100);
+        Vertex hortencias =new Vertex( "Rua das Hortencias",Math.random()*100);
+        Vertex geranios =new Vertex( "Rua das Geranios",Math.random()*100);
+        Vertex tulipas = new Vertex("Rua das Tulipas",Math.random()*100);
+        Vertex matiasSandri =new Vertex( "Rua das Matias Sandri",Math.random()*100);
+        Vertex papoulas = new Vertex("Rua das Papolas",Math.random()*100);
+        Vertex acacias = new Vertex("Rua das Acacias",Math.random()*100);
+        Vertex jasmins = new Vertex("Rua dos Jamins",Math.random()*100);
+        Vertex magnolias = new Vertex("Rua das Magnolias",Math.random()*100);
+        Vertex lirios = new Vertex("Rua dos Lirios",Math.random()*100);
+        Vertex begonias = new Vertex("Rua das Begonias",Math.random()*100);
+        Vertex orquideas =new Vertex( "Rua das Orquideas",Math.random()*100);
+        Vertex perpetuas = new Vertex("Rua das Perpetuas",Math.random()*100);
+        Vertex petuinas = new Vertex("Rua das Petuinas",Math.random()*100);
+        Vertex manacas = new Vertex("Rua dos Manacas",Math.random()*100);
         
         // add the vertices
         
@@ -126,9 +126,9 @@ public class GraphCreation {
         g.addVertex(acacias);
         g.addVertex(papoulas);
         g.addVertex(perpetuas);
-         g.addVertex(petuinas);
+        g.addVertex(petuinas);
         g.addVertex(manacas);
-
+        g.addVertex(orquideas);
         // add edges to create a circuit
         g.addEdge(avbeiramar, orquideas);
         g.addEdge(avbeiramar, matiasSandri);

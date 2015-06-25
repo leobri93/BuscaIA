@@ -22,7 +22,7 @@ public class BuscaLargura {
     //UndirectedGraph<String, DefaultEdge> stringGraph = createStringGraph();
     public List<String> BuscaEmLargura(String startRoad, String endRoad) throws IOException {
         //cria um grafo com as informações provenientes do arquivo
-        SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createGraph();
+        SimpleWeightedGraph<Vertex, DefaultWeightedEdge> graph = GraphCreation.createVertexGraph();
 
         //cria os vertices Inicio e Fim
         Vertex start = searchByName(startRoad, graph);
