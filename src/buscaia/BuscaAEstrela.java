@@ -20,20 +20,19 @@ public class BuscaAEstrela {
             Queue<Frontier> frontier = new LinkedList<>();
             List<Vertex> visitados = new LinkedList<>();
             
-            visitados.add(start);
             Vertex atual = frontier.poll().getVertice();
             
             List<Frontier> listaDesordenada = new LinkedList<>();
             
             while(!atual.equals(end)){
                 for(DefaultWeightedEdge aresta : graph.edgesOf(atual)){
-                    if(graph.getEdgeSource(aresta).equals(atual)){
+                    if(graph.getEdgeSource(aresta).equals(atual) && visitados.contains(graph.getEdgeTarget(aresta))){
                         Frontier tempFrontier = new Frontier(graph.getEdgeTarget(aresta), graph.getEdgeWeight(aresta)+graph.getEdgeTarget(aresta).getHeuristica());
                         listaDesordenada.add(tempFrontier);
                     }
                 }
                 insereOrdenadoNoFrontier(listaDesordenada, frontier);
-                
+                visitados.add(atual);
             }
         }
 
