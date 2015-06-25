@@ -6,9 +6,9 @@
 package buscaia;
 
 import java.util.LinkedList;
-import java.util.Objects;
+import java.util.List;
 
-public class Vertex extends Object{
+public class Vertex extends Object implements Cloneable{
 
     private String nomeDaRua;
     private double heuristica;
@@ -91,5 +91,14 @@ public class Vertex extends Object{
             return false;
         }
     }
-
+    
+    @Override
+    public Vertex clone() throws CloneNotSupportedException{
+        Vertex temp = (Vertex) super.clone();
+        List<Referencia> tempList = temp.getReferencias();
+        for (Referencia ref : tempList) {
+            temp.referencias.add((Referencia)ref.clone());
+        }
+        return temp;
+    }
 }

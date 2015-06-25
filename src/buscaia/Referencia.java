@@ -4,7 +4,7 @@
  */
 package buscaia;
 
-public class Referencia extends Object {
+public class Referencia extends Object implements Cloneable{
 
     private double latitude;
     private double longitude;
@@ -57,5 +57,9 @@ public class Referencia extends Object {
         } else {
             return false;
         }
+    }
+    @Override
+    public Referencia clone() throws CloneNotSupportedException{
+        return (Referencia) super.clone();
     }
 }

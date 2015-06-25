@@ -11,6 +11,8 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleWeightedGraph;
 
@@ -32,7 +34,16 @@ public class GraphCreation {
         
         List<Vertex> copia = new LinkedList<>();
         List<Referencia> tempList = new LinkedList<>();
+        
         copia.addAll(nos);
+        for (Vertex temp : nos) {
+            try {
+                copia.add((Vertex) temp.clone());
+            } catch (CloneNotSupportedException ex) {
+                Logger.getLogger(GraphCreation.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
         //itera sobre o conjunto de nós para adiciona-los no grafo 
         for (Vertex noAtual : copia) {
             //adiciona o nó atual no grafo se ele nao existir
